@@ -40,3 +40,17 @@ Two additional source-audit tools, `audit_search_code` and `audit_file_info`, we
 Requirements definition, architecture trade-offs, integration, debugging, and acceptance criteria were human-directed. AI coding tools assisted with parts of implementation and analysis. Earlier Ollama/LangChain experiments are retained as future architectural options alongside the current LM Studio-oriented development workflow.
 
 The underlying project remains in development. Wider source publication is contingent on a separate review.
+
+<!-- HARNESS-AI-AUTOPUBLISH-START -->
+
+## Selected Source Evidence
+
+The [implementation evidence and SHA-256 inventory](AUDIT_AND_EVIDENCE.md) includes
+allowlisted source snapshots and test implementations. Static inspection does not
+mean E2E validation or production-readiness.
+
+<!-- HARNESS-AI-AUTOPUBLISH-END -->
+
+## Latest engineering recovery — 2026-10-11
+
+[Recovery, actual call paths and limitations](ENGINEERING_RECOVERY.md): 78 Python tests passed (1 optional skip), TypeScript build and 4 tests passed, real local embedding/vector retrieval and isolated Redis/RQ execution checked. Academy E2E remains blocked by content validation; no production deployment or approved educational PDF is claimed. [Structured results](evidence/recovery_validation_20261011.json).

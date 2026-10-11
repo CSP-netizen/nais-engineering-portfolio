@@ -21,3 +21,7 @@ An earlier execution encountered import/dependency issues. The later focused ret
 A fully approved final document-release end-to-end demonstration, independent holdout, production patch verification and measured operator time savings were not established by the referenced development records. A blocked output gate is evidence of a check being applied, not evidence of a successful released PDF.
 
 These observations are derived from private project code and test records. Raw logs are not publicly mirrored here, and claims are limited accordingly.
+
+## Recovery verification update
+
+See [2026-10-11 recovery](ENGINEERING_RECOVERY.md) for verified changes, real execution boundaries, remaining failures and the reviewed source manifest. Earlier observations above remain historical and are not a claim of production acceptance.

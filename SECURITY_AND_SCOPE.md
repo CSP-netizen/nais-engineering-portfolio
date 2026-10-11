@@ -9,3 +9,7 @@ The HARNESS-AI work explores source provenance, PII handling, constrained tool a
 These are **implementation-level observations**, not certification that every possible outbound path is secure or that every workflow has passed integration testing.
 
 This documentation repository deliberately excludes the private project's original source tree, Git history, credentials, data sets, private execution logs and customer/student data. Any subsequent public code or artifacts require specific confidentiality and licensing review.
+
+## Recovery verification update
+
+See [2026-10-11 recovery](ENGINEERING_RECOVERY.md) for verified changes, real execution boundaries, remaining failures and the reviewed source manifest. Earlier observations above remain historical and are not a claim of production acceptance.

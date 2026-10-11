@@ -1,0 +1,125 @@
+{
+  "date": "2026-10-11",
+  "scope": "synthetic engineering recovery; no production restart",
+  "python_suites": [
+    {
+      "suite": "test_engineering_recovery.py",
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "status": "PASS",
+      "skipped": 0
+    },
+    {
+      "suite": "test_ip_fabric.py",
+      "tests": 15,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "status": "PASS"
+    },
+    {
+      "suite": "test_mcp_gateway_mvp.py",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "status": "PASS"
+    },
+    {
+      "suite": "test_mcp_redis_fix.py",
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "status": "PASS"
+    },
+    {
+      "suite": "test_mcp_ux_polish.py",
+      "tests": 11,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "status": "PASS"
+    },
+    {
+      "suite": "test_academy_e2e_002.py",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "status": "PASS"
+    },
+    {
+      "suite": "test_pre_render_qa.py",
+      "tests": 11,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "status": "PASS"
+    },
+    {
+      "suite": "test_knowledge_ir_v11.py",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "status": "PASS"
+    }
+  ],
+  "python_passed": 78,
+  "python_skipped": 1,
+  "typescript": {
+    "build": "PASS",
+    "tests_passed": 4
+  },
+  "pii": {
+    "synthetic_documents": 12,
+    "expected_spans": 17,
+    "covered_spans": 17,
+    "generalization": "NOT_MEASURED"
+  },
+  "redis_rq": {
+    "status": "PASS",
+    "isolation": "disposable Redis + container",
+    "provider": "stubbed",
+    "jobs": {
+      "completed": 1,
+      "expected_failed": 1
+    }
+  },
+  "host_vector": "PASS: real Nomic 768; ingest, search, incremental skip, rebuild",
+  "host_text": "BLOCKED: unbounded output request timed out at 90 seconds",
+  "container_vector": "PASS: real Nomic 768; ingest, search, incremental skip, rebuild",
+  "container_text": "PASS: Qwen, 64 token cap, thinking disabled for smoke",
+  "academy_e2e": {
+    "status": "BLOCKED",
+    "observed": "real retrieval and generation executed; initial and one built-in repair failed validation",
+    "errors": [
+      "X shape must not be assigned 2C cellular DNA",
+      "Pre/post replication 1C-to-2C conflicts with 2n=4 fixture"
+    ],
+    "vision_qa": "NOT_RUN; content gate blocked rendering",
+    "release_eligible": false
+  },
+  "compose_config": "PASS",
+  "runtime_main": "BLOCKED: old image load_dotenv NameError; host source already imports it; no redeployment",
+  "configured_token_in_captured_output": false,
+  "remaining": [
+    "Generic router execution is not implemented; now reports honestly",
+    "PII rules are bounded heuristics",
+    "Official curriculum/released PDF not verified",
+    "GUI reinstall and production service integration not performed"
+  ],
+  "commands": [
+    "python -B -m unittest discover -s tests -p <suite name from python_suites> -v",
+    "node lmstudio-monitor/node_modules/typescript/bin/tsc -p lmstudio-monitor",
+    "node --test lmstudio-monitor/tests/*.cjs",
+    "python -B test_pii_recall.py",
+    "python -B scripts/verify_engineering_recovery.py rq",
+    "python -B scripts/verify_engineering_recovery.py host",
+    "python -B scripts/verify_engineering_recovery.py docker",
+    "python -B scripts/verify_engineering_recovery.py academy",
+    "docker compose config --quiet"
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "source_repository": "HARNESS-AI private development repository",
+  "source_commit": "1b7146a980a7378fb17ea5c69cb7d1dbdfc9525e",
+  "public_repository": "CSP-netizen/nais-engineering-portfolio",
+  "date": "2026-10-11",
+  "selected": [
+    {
+      "path": "ip_fabric/core.py",
+      "published_as": "source_samples/ip_fabric/core.py",
+      "source_sha256": "597ff53a26c6f51fd4ba5a34fce6197106af480d3046149561b5177f9ef535a6",
+      "published_sha256": "597ff53a26c6f51fd4ba5a34fce6197106af480d3046149561b5177f9ef535a6",
+      "transformation": "UTF-8/no BOM; LF; trim trailing whitespace; Python AST identical",
+      "previous_snapshot_sha256": "597ff53a26c6f51fd4ba5a34fce6197106af480d3046149561b5177f9ef535a6"
+    },
+    {
+      "path": "ip_fabric/index.py",
+      "published_as": "source_samples/ip_fabric/index.py",
+      "source_sha256": "805b5f95f21e44506346372fd1b439556935fd346eecbee22138fee9e05323e4",
+      "published_sha256": "805b5f95f21e44506346372fd1b439556935fd346eecbee22138fee9e05323e4",
+      "transformation": "UTF-8/no BOM; LF; trim trailing whitespace; Python AST identical",
+      "previous_snapshot_sha256": "805b5f95f21e44506346372fd1b439556935fd346eecbee22138fee9e05323e4"
+    },
+    {
+      "path": "knowledge_ir_v1/retrieval.py",
+      "published_as": "source_samples/knowledge_ir_v1/retrieval.py",
+      "source_sha256": "4b0a4547dcc0de0dce9a65fedf4d3894c0acde0ef568e9e75d05389427ef0f2c",
+      "published_sha256": "4b0a4547dcc0de0dce9a65fedf4d3894c0acde0ef568e9e75d05389427ef0f2c",
+      "transformation": "UTF-8/no BOM; LF; trim trailing whitespace; Python AST identical",
+      "previous_snapshot_sha256": "4b0a4547dcc0de0dce9a65fedf4d3894c0acde0ef568e9e75d05389427ef0f2c"
+    },
+    {
+      "path": "hybrid_ai/provider.py",
+      "published_as": "source_samples/hybrid_ai/provider.py",
+      "source_sha256": "0a8a4a889e59330a5e04e3214134c19f8e6cc8522050766f3b946c74cf65eb81",
+      "published_sha256": "0a8a4a889e59330a5e04e3214134c19f8e6cc8522050766f3b946c74cf65eb81",
+      "transformation": "UTF-8/no BOM; LF; trim trailing whitespace; Python AST identical",
+      "previous_snapshot_sha256": "b2bb0f245e90553d0328d19d441578fcb255f01c92efdc1a78df1d6ab1707c69"
+    },
+    {
+      "path": "mcp_gateway/audit_fs_tools.py",
+      "published_as": "source_samples/mcp_gateway/audit_fs_tools.py",
+      "source_sha256": "0c1811acb86f2301d897279781b7e95f49ae5a478a86bde011aa971c929528ec",
+      "published_sha256": "2ee48a8cfecba3e16f00904db9e08801433eea1974d6c5414150bf43b83ad43f",
+      "transformation": "UTF-8/no BOM; LF; trim trailing whitespace; Python AST identical",
+      "previous_snapshot_sha256": "fe422ff7c6d1d558c35a695bc9ad3f4ba5992d9fc4ca45b3817052d2113b86f1"
+    },
+    {
+      "path": "tests/test_ip_fabric.py",
+      "published_as": "source_samples/tests/test_ip_fabric.py",
+      "source_sha256": "cc9ca5a197e089d31bcb1630c763dba3420a7d1afb6d8778bc4e12032d68cbc7",
+      "published_sha256": "cc9ca5a197e089d31bcb1630c763dba3420a7d1afb6d8778bc4e12032d68cbc7",
+      "transformation": "UTF-8/no BOM; LF; trim trailing whitespace; Python AST identical",
+      "previous_snapshot_sha256": "cc9ca5a197e089d31bcb1630c763dba3420a7d1afb6d8778bc4e12032d68cbc7"
+    },
+    {
+      "path": "tests/test_mcp_gateway_mvp.py",
+      "published_as": "source_samples/tests/test_mcp_gateway_mvp.py",
+      "source_sha256": "52e40392525fa9e9d72573fbf86619659317aa4ae3e10f944332d3cc4353ad3f",
+      "published_sha256": "dfcba7798b80db50437f7105763bb747dad999e61717d43b37b57e5ef2967e86",
+      "transformation": "UTF-8/no BOM; LF; trim trailing whitespace; Python AST identical",
+      "previous_snapshot_sha256": "2850b6d3926dbf5685786d18cd35832d4eafa5cb6f347c9c1929d636e1f4ea33"
+    },
+    {
+      "path": "tests/test_engineering_recovery.py",
+      "published_as": "source_samples/tests/test_engineering_recovery.py",
+      "source_sha256": "7d596482ee5b07c899204228a3cfb2a9d627ebbb8263f1b2665344fb77118be0",
+      "published_sha256": "7d596482ee5b07c899204228a3cfb2a9d627ebbb8263f1b2665344fb77118be0",
+      "transformation": "UTF-8/no BOM; LF; trim trailing whitespace; Python AST identical",
+      "previous_snapshot_sha256": null
+    }
+  ],
+  "limitations": "Selected source snapshots, not a standalone runnable distribution. Private configuration, datasets, logs and dependencies excluded. No blanket third-party license grant.",
+  "source_hash_basis": "Source working-tree bytes at source_commit; Git newline normalization may differ."
+}

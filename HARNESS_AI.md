@@ -33,3 +33,7 @@ The work emphasizes separating an LLM response from a validated deliverable, kee
 ## Application scope
 
 Educational document generation is one concrete test case for broader knowledge-intensive administrative automation. Further work includes representative end-to-end cases, holdout evaluations, source/license review, and deployment hardening.
+
+## Recovery verification update
+
+See [2026-10-11 recovery](ENGINEERING_RECOVERY.md) for verified changes, real execution boundaries, remaining failures and the reviewed source manifest. Earlier observations above remain historical and are not a claim of production acceptance.

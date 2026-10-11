@@ -29,3 +29,7 @@ This is an observed, limited tool-integration path. It is not a claim that every
 ## Next engineering steps
 
 Reproducible end-to-end tests, independently labeled evaluation, permission and provenance checks, and review of any files proposed for wider publication.
+
+## Recovery verification update
+
+See [2026-10-11 recovery](ENGINEERING_RECOVERY.md) for verified changes, real execution boundaries, remaining failures and the reviewed source manifest. Earlier observations above remain historical and are not a claim of production acceptance.

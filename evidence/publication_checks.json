@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-11",
+  "content_files_scanned": 18,
+  "configured_secret_matches": 0,
+  "credential_signature_matches": 0,
+  "private_host_path_matches": 0,
+  "source_and_published_hashes": "MATCH",
+  "python_sample_ast": "IDENTICAL",
+  "scope": "Exact current files only; not a general confidentiality certification"
+}
