@@ -1,13 +1,11 @@
-# Public Information Boundary
+# Security and Publication Scope
 
-This repository is deliberately generated **from an explicit allowlist of new documentation files**. It does not include:
+The HARNESS-AI work explores source provenance, PII handling, constrained tool access and explicit approval boundaries.
 
-- Source files or commit history copied from private repositories.
-- `.env`, passwords, tokens, SSH credentials, or cloud API keys.
-- User/student/customer information or confidential source documents.
-- Production network details, internal hostnames, deployment credentials, databases, or runtime logs.
-- Third-party assets without confirmed redistribution rights.
+- The local source-inspection interface restricts paths and is designed as read-only.
+- PII detection/masking and security-policy modules were identified in the project.
+- Canonical record integrity checking and pre-render validation are distinct parts of the engineering design.
 
-This is a documentation-only portfolio. Public visibility is not a claim that the source project is open source. No explicit source-code license is granted here.
+These are **implementation-level observations**, not certification that every possible outbound path is secure or that every workflow has passed integration testing.
 
-Security-related descriptions refer to implementation objectives or partially inspected modules. They are **not** claims of a completed independent security audit.
+This documentation repository deliberately excludes the private project's original source tree, Git history, credentials, data sets, private execution logs and customer/student data. Any subsequent public code or artifacts require specific confidentiality and licensing review.
