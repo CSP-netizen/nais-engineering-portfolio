@@ -1,38 +1,35 @@
-# HARNESS-AI | Engineering Summary
+# HARNESS-AI | Engineering Work
 
-## Problem and objective
+## The problem
 
-Document-heavy workflows can combine data extraction, search, generation, tool usage, and reporting. A useful automation system must address input format differences, model uncertainty, safe handling of data, and the need for human review.
+Document automation requires more than text generation: inputs must be understood, source records retrieved, model and tool actions coordinated, and outputs checked before a person approves them. HARNESS-AI explores an explicit workflow across these boundaries.
 
-## Components observed in the project
+## Architecture and implementation
 
-The private development environment includes documented or code-reported elements for:
+- **Inference:** `hybrid_ai/provider.py` includes a local LM Studio-compatible HTTP interface. Earlier Ollama and LangChain code was intentionally retained for possible service-oriented use.
+- **Orchestration:** `control_plane/orchestrator.py` contains lease/interruption-handling logic and a task takeover path.
+- **Provenance:** `ip_fabric/core.py` includes canonical-revision and digest-verification operations.
+- **Retrieval:** `knowledge_ir_v1/retrieval.py` checks evidence status and structured content before downstream use.
+- **Pre-render checks:** `academy_pdf_v12/pre_render.py` models quality and approval conditions for a representative document-generation workflow.
 
-- Docker services for main/service/worker functions and Redis queuing.
-- LM Studio as a current principal inference endpoint, with earlier Ollama/LangChain-based experiments retained.
-- Python orchestration, document parsing/OCR, retrieval and vector-data processing modules.
-- PII detection and masking code, plus security policy considerations.
-- A custom LM Studio plugin with Python bridge exposing Academy workflow tools and additional **read-only file audit tools**.
+These are code-level observations, not a declaration that every integrated end-to-end path has passed.
 
-**Implementation evidence is scoped:** Source-level inspection supports the existence of relevant modules and tool registrations. It does not establish system-wide production readiness, a complete security boundary, or successful end-to-end execution of every workflow.
+## A completed integration episode: Qwen local source audit
 
-## Verified development episode: read-only AI-assisted project inspection
+**Problem:** A local Qwen session could see Academy job tools but could not inspect the project source directly.
 
-**Issue.** The Qwen session originally had only Academy task submission/status/artifact tools. It could not inspect arbitrary project source files. The initial audit repeatedly selected unrelated Academy tools.
+**Engineering change:** The LM Studio plugin and Python bridge were extended with bounded read-only source-inspection tools.
 
-**Changes.** The local development workflow extended the LM Studio plugin's tool registry and the Python adapter with bounded, read-only code navigation and inspection functions.
+**Relevant modules:** `lmstudio-monitor/src/index.ts`, `lmstudio-monitor/src/bridge.ts`, `mcp_gateway/monitor_bridge.py`, `mcp_gateway/audit_fs_tools.py`.
 
-**Observed validation.** The TypeScript plugin build and a Python smoke test reported PASS. After installation, the Qwen session returned the contents of `mcp_gateway/server.py` using the file-read tool and enumerated the `mcp_gateway` folder with the file-list tool. Reported code matched the inspected source. Other security guarantees remain out of scope.
+**Observed result:** TypeScript build PASS, Python smoke PASS, and actual model calls to list `mcp_gateway/` and read `mcp_gateway/server.py`. Previously unrelated Academy job calls were excluded from the audit session to prevent task mixing.
 
-**Human contribution.** Requirements for a reusable code-auditing capability, integration boundaries, tool selection, staged testing, and reviewing test outputs. AI tools assisted in preparing implementation changes and code analysis.
+**Boundary:** This establishes useful tool integration, not exhaustive security, performance, or correctness under every input.
 
-## Evaluating generated content
+## Engineering decisions and responsibility
 
-Document-generation quality control work included human review of outputs, discussion and revision of error criteria, and candidate changes to parsing, embeddings, tool routing, and prompts. The exact quantitative improvements and confusion-matrix definitions are **not published as verified measurements** in this documentation-only repository.
+The work emphasizes separating an LLM response from a validated deliverable, keeping original evidence distinct from indexes, retaining alternative inference backends, and recording failure-to-fix verification. Requirements, architecture direction, risk boundaries, integration and review were led by the project owner with AI assistance during coding and analysis.
 
-## Next milestones
+## Application scope
 
-- Verify representative end-to-end flows with reproducible test cases.
-- Differentiate actual runtime entry points from retained experimental alternatives.
-- Assess output quality, failure recovery, provenance, permissions, and secret handling.
-- Add independently reviewable evidence only after checking confidentiality and licensing.
+Educational document generation is one concrete test case for broader knowledge-intensive administrative automation. Further work includes representative end-to-end cases, holdout evaluations, source/license review, and deployment hardening.
