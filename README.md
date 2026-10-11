@@ -1,37 +1,42 @@
-# AI Systems & Robotics | Engineering Portfolio
+# HARNESS-AI
 
-Selected, publicly shareable engineering documentation prepared for an application to the National Science AI Center (NAIS).
+**Local AI Orchestration & Evidence-Grounded Workflow Automation**
 
-> **Disclosure:** This repository is a **curated portfolio**, not a mirror of the original development repositories. Original source code, datasets, credentials, deployment configuration, and Git history remain private. A feature mentioned in a design document is not necessarily implemented or validated.
+Python · Docker · LM Studio · MCP · Knowledge Retrieval · Validation
 
-## Projects
+HARNESS-AI is an engineering project to connect local/hybrid language-model inference with document workflows, source-traceable knowledge, controlled tool execution, and human review. It is designed around a practical question: **how can automated outputs remain inspectable and testable before they are used in real work?**
 
-### 1. HARNESS-AI â€” Local/Hybrid AI Workflow System
+## Engineering areas
 
-- **Goal:** Integrate document processing, retrieval-augmented generation, inference providers, and automation tooling into a controlled workflow.
-- **Architecture:** Python components, containerized runtime, local model tooling, workflow orchestration, retrieval/data processing, and an LM Studio-connected tool interface.
-- **Current demonstrated capability:** A locally hosted Qwen model was able to invoke newly added read-only project file listing and reading tools through the LM Studio plugin and Python bridge. This was verified by a user-observed invocation and matching returned source text.
-- **Historical technical decisions:** Earlier experiments used Ollama and LangChain. The LM Studio workflow improves interactive development and inspection; the earlier stack is retained for potential future use.
-- **Status:** Development and integration in progress. Full end-to-end reliability, security properties, and performance claims are **not** asserted here.
+| Focus | Selected implementation |
+| --- | --- |
+| Local AI and tool integration | LM Studio plugin, Qwen, Python bridge, bounded read-only source inspection |
+| Workflow orchestration | Python task control and state/lease-related components; Docker service and worker structure |
+| Knowledge and provenance | Versioned records, SHA-256 integrity checks, retrieval and structured evidence |
+| Output quality | Pre-render checks and explicit approval states |
+| Data handling | PII masking and policy-related modules requiring further integrated security testing |
 
-See [HARNESS_AI.md](HARNESS_AI.md).
+## Demonstrated integration: model-to-tool source inspection
 
-### 2. Sim2Real â€” Robot Simulation & Control Learning Project
+A locally hosted Qwen session successfully invoked `audit_list_files` and `audit_read_file` through an LM Studio plugin and Python bridge. The model listed `mcp_gateway/` and read `mcp_gateway/server.py`, returning source content consistent with the inspected file. The plugin build and a Python smoke check were also reported as passing.
 
-- **Goal:** Develop a reproducible ROS 2 simulation and robotics evaluation pipeline as a foundation for sim-to-real research.
-- **Focus:** 7-DoF robot kinematics, Gazebo simulation, controller integration, trajectory generation, evaluation, and recovery-oriented experiments.
-- **Status:** Research and incremental implementation ongoing. Roadmap items are *not* represented as completed features.
+Two additional source-audit tools, `audit_search_code` and `audit_file_info`, were registered; their presence does not by itself imply independent functional validation of each execution path.
 
-See [SIM2REAL.md](SIM2REAL.md).
+## Selected evaluation observations
 
-## Engineering methodology
+- 480 **related synthetic test cases**, organized as 12 types × 40 runs. These were not 480 independent production documents.
+- 15 **focused component tests** reportedly passed in a later isolated retest (6 Knowledge IR; 9 workflow).
+- No production-ready end-to-end release, generalization accuracy, or measured productivity improvement is claimed.
 
-Requirements and system boundaries â†’ architecture trade-offs â†’ integration â†’ execution/test evidence â†’ limitation tracking. AI coding assistants were used for implementation support and option exploration; architecture decisions, integration direction, and acceptance judgments were human-directed.
+## Documentation
 
-## Verification & publication boundary
+- [System & implementation](HARNESS_AI.md)
+- [Architecture & design rationale](ARCHITECTURE_AND_DECISIONS.md)
+- [Evidence & verification scope](EVIDENCE_AND_LIMITATIONS.md)
+- [Security & publication scope](SECURITY_AND_SCOPE.md)
 
-- [Evidence and limitations](EVIDENCE_AND_LIMITATIONS.md)
-- [Public information boundary](SECURITY_AND_SCOPE.md)
-- [NAIS submission notes](SUBMISSION_GUIDE.md)
+## Engineering approach
 
-**No internal source repository or its history is published here.**
+Requirements definition, architecture trade-offs, integration, debugging, and acceptance criteria were human-directed. AI coding tools assisted with parts of implementation and analysis. Earlier Ollama/LangChain experiments are retained as future architectural options alongside the current LM Studio-oriented development workflow.
+
+The underlying project remains in development. Wider source publication is contingent on a separate review.
