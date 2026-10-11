@@ -1,0 +1,15 @@
+# No private project files are needed in this public portfolio.
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+*.db
+*.sqlite*
+*.log
+__pycache__/
+.venv/
+node_modules/
+private/
+secrets/
